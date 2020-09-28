@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/main_Scrollview">
+
+    <LinearLayout
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/image" />
+
+        <RadioGroup
+            android:id="@+id/search_term_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/photo_search_radio_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:checked="true"
+                android:text="사진검색" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/user_search_radio_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="사용자검색" />
+
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_term_Text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="사진검색"
+            app:counterEnabled="true"
+            app:counterMaxLength="12"
+            app:startIconDrawable="@drawable/image"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:helperText="검색어를 입력해주세요"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search_term_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="12"
+                android:inputType="text"
+                android:layout_margin="5dp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:visibility="invisible"
+            android:id="@+id/frame_search_button"
+            android:layout_marginTop="20dp"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:text="검색"
+            android:textStyle="bold"
+            android:clickable="true"/>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/frame_search_progress"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:visibility="invisible"/>
+
+    </LinearLayout>
+
+</ScrollView>
